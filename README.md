@@ -148,7 +148,7 @@ Working directories (`vendor/`, `models/`, `environment/`, `runs/`, `logs/`, gen
 
 ## Release checks
 
-This source checkout passed 157 Python checks, eleven native API regressions and the real no-model ns-3 smoke on Apple Silicon with Python 3.11.15. Both the native scenario and pinned llama-server were built from source. The 2,013-pair CPU action-space replay reproduced the stored numerical summaries exactly. A second full 1,190-case campaign was not run for these packaging checks; use the explicit replication commands above when resources are available.
+This source checkout passed 159 Python checks, eleven native API regressions and the real no-model ns-3 smoke on Apple Silicon with Python 3.11.15. Both the native scenario and pinned llama-server were built from source. The 2,013-pair CPU action-space replay reproduced the stored numerical summaries exactly. A second full 1,190-case campaign was not run for these packaging checks; use the explicit replication commands above when resources are available.
 
 ## Licensing
 

@@ -3,6 +3,7 @@ from pathlib import Path
 import importlib.util
 import json
 import signal
+import sys
 import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -66,3 +67,13 @@ def test_process_group_pids_are_refused(checkout, monkeypatch, pid):
     with pytest.raises(SystemExit, match='invalid server PID'):
         stop.main()
     assert killed == [] and registry.exists()
+
+@pytest.mark.parametrize('option, code', [('--help', 0), ('--dry-run', 2)])
+def test_help_and_unknown_options_never_stop_servers(monkeypatch, option, code):
+    def unexpected_stop():
+        raise AssertionError('Argument-only invocations must not stop any server')
+    monkeypatch.setattr(stop, 'main', unexpected_stop)
+    monkeypatch.setattr(sys, 'argv', ['stop_servers.py', option])
+    with pytest.raises(SystemExit) as result:
+        stop.cli()
+    assert result.value.code == code

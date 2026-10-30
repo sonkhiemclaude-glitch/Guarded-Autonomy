@@ -1,5 +1,6 @@
 """Stop only model processes whose executable and exact alias belong to this checkout."""
 from pathlib import Path
+import argparse
 import json
 import os
 import re
@@ -39,5 +40,9 @@ def main():
             print('Stopped', alias, pid)
         path.unlink()
 
-if __name__ == '__main__':
+def cli():
+    argparse.ArgumentParser(description=__doc__).parse_args()
     main()
+
+if __name__ == '__main__':
+    cli()

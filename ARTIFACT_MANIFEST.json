@@ -3,7 +3,7 @@
   "scope": "Source, fixed reproducibility inputs and numerical regression fixtures. Primary campaign results are released separately.",
   "sha256_files": {
     ".gitignore": "af65094774bc676ab012475d58208d0c1df40c770612c4b053bd520cc7014774",
-    "README.md": "07e5b99764b240a2e8d9db5a59b0d6e41822561c35bb49756bc504138e979e65",
+    "README.md": "38febca18bd35c13e6e05012d7d95bf00bf63a048eb754d9264fba2173f78d26",
     "artifact_inputs/dependencies.json": "169847fbb82b2945619dbc9ef9de05d67ec8985279397e8212618b509a09d971",
     "artifact_inputs/llama_cpp_commit.txt": "efd0bf1d1a2e71a463d3e4388991621cf7ae6c5ee309b399d50498be1cc4a9ba",
     "artifact_inputs/models_manifest.template.json": "07488cb160518c78853b994cec60374b7dab6c1896b3cb2a1cdf3fc42d8c123c",
@@ -155,10 +155,10 @@
     "tools/setup_native.py": "701470dbee76889343f76cee7560ff3014d527a0d70b40c1c71be7d823d4f2a5",
     "tools/smoke_native.py": "82c0cce9d0ba120f4a1387ff90e28d4cb10329a733c0982c85f14b5ffd0fd7f0",
     "tools/start_servers.py": "6159178fa9dea94b11b10925245322f0eacbf33e631434cdcd470b182288ba95",
-    "tools/stop_servers.py": "6e7a66d75a783d868736de43aa2daeae0caaf16ec9f1b5c25922d644f86c8b54",
+    "tools/stop_servers.py": "6a2d0f5679cfa5426a500cb8a4c7e93760a2fb53a6b8c3a593c5dfdccfdfae28",
     "tools/tests/test_export_results.py": "82723d186bcce91f0977dcd5160f03698147d81ba73c312e266f6ae1f4939bee",
     "tools/tests/test_schema_diagnostic.py": "391c9cc625ebb250dc907daa0c7724d1acb5326352535c40e6516842b7c47077",
-    "tools/tests/test_stop_servers.py": "b32ce766bfbc2568106fba8c16692201855270f66bfc300620e39732364aca18"
+    "tools/tests/test_stop_servers.py": "46cb7b470858728aa19058517127fb173219193b5f4fd1522c6260bb1534bd28"
   },
   "dependencies": {
     "ns3": {
@@ -179,7 +179,7 @@
   "scientific_core_matches_execution_source": 47,
   "manifest_self_hash": "This manifest is excluded from its own hash map; Git commit identifies the full tree.",
   "validation": {
-    "python_checks_passed": 157,
+    "python_checks_passed": 159,
     "native_api_checks_passed": 11,
     "real_native_smoke_passed": true,
     "smoke_llm_calls": 0,
