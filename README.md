@@ -101,7 +101,27 @@ Optional bulk throughput endpoints can be created with `python tools/start_serve
 
 Accepted network cases receive `COMPLETE.json` only after validation and raw-file checks. Final tables are written to `runs/research_v31_primary/analysis/`; `DONE` appears only after all 1,190 cases and the final analysis succeed. An incomplete/failed directory is deliberately not overwritten on restart. Inspect it and preserve its evidence before retrying; never replace a seed or mark a failed case complete. Restart with the same inputs to reuse validated receipts.
 
-## 5. Add verified results later
+## 5. Supplemental diagnostics
+
+These commands are separate from the primary performance matrix.
+
+```bash
+python tools/action_space_sweep.py
+```
+
+This CPU-only sweep uses all 20 released held-out states (five seed clusters) and three guard configurations. It evaluates 2,013 candidate/configuration pairs using the local Python guard and the same reference harm oracle as the project. It starts each proposal with a fresh isolation budget. The outputs describe local action-space geometry; they do not measure model action probabilities, packet-level attack success, or stateful rate-limit efficacy. Files are written to `runs/artifact_action_space_sweep/`.
+
+After starting a selected artifact model server, its five action-schema branches can be checked with:
+
+```bash
+python tools/schema_diagnostic.py --model llama-3.2-1b
+# Or, with all six single-slot servers running:
+python tools/schema_diagnostic.py --all
+```
+
+This uses five explicit JSON-copy prompts per model and the server's native JSON-schema constraint. It measures transport/action-space capability, with one attempt per prompt; it is not an autonomous network decision or attack benchmark. It refuses to submit requests while the full replication holds its lock. Each invocation records a new timestamped directory under `runs/artifact_schema_diagnostic/`, including failed calls. Raw model responses remain git-ignored.
+
+## 6. Add verified results later
 
 Numerical outputs can be added without publishing raw responses or authoring material:
 
@@ -120,7 +140,7 @@ The exporter requires complete 1,190-case coverage and matching analysis hashes.
 - `native_overlay/`: modified AODV sources and standalone ns-3 scenarios, including the JSON header needed to build.
 - `native_tests/`: native retained-key/commit-hook regression source.
 - `artifact_inputs/`: portable fixed states, payloads, intervention plan and dependency/model fingerprints.
-- `tools/`: clean setup, no-model smoke, optional inference/replication, and numerical-result export.
+- `tools/`: clean setup, no-model smoke, optional inference/replication, supplemental diagnostics, and numerical-result export.
 - `scripts/`: measurement, validation and analysis implementation.
 - `results/`: versioned numerical releases, added after verification.
 
@@ -128,7 +148,7 @@ Working directories (`vendor/`, `models/`, `environment/`, `runs/`, `logs/`, gen
 
 ## Release checks
 
-This source checkout passed 146 Python checks, eleven native API regressions and the real no-model ns-3 smoke on Apple Silicon with Python 3.11.15. Both the native scenario and pinned llama-server were built from source. A second full 1,190-case campaign was not run for these packaging checks; use the explicit replication commands above when resources are available.
+This source checkout passed 157 Python checks, eleven native API regressions and the real no-model ns-3 smoke on Apple Silicon with Python 3.11.15. Both the native scenario and pinned llama-server were built from source. The 2,013-pair CPU action-space replay reproduced the stored numerical summaries exactly. A second full 1,190-case campaign was not run for these packaging checks; use the explicit replication commands above when resources are available.
 
 ## Licensing
 

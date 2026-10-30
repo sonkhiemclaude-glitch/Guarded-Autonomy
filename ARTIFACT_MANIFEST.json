@@ -3,7 +3,7 @@
   "scope": "Source, fixed reproducibility inputs and numerical regression fixtures. Primary campaign results are released separately.",
   "sha256_files": {
     ".gitignore": "af65094774bc676ab012475d58208d0c1df40c770612c4b053bd520cc7014774",
-    "README.md": "fe13ecfcf32823ec6633b2bee92225d90f24af8a52a8283f687a8b6b10711efb",
+    "README.md": "07e5b99764b240a2e8d9db5a59b0d6e41822561c35bb49756bc504138e979e65",
     "artifact_inputs/dependencies.json": "169847fbb82b2945619dbc9ef9de05d67ec8985279397e8212618b509a09d971",
     "artifact_inputs/llama_cpp_commit.txt": "efd0bf1d1a2e71a463d3e4388991621cf7ae6c5ee309b399d50498be1cc4a9ba",
     "artifact_inputs/models_manifest.template.json": "07488cb160518c78853b994cec60374b7dab6c1896b3cb2a1cdf3fc42d8c123c",
@@ -143,18 +143,22 @@
     "scripts/validate_research_case.py": "8b39f7ea0525f61c2ff1b50ff6ed5e6117dfff1f7a0e28890df224d0c03e2388",
     "third_party/nlohmann_json/LICENSE.MIT": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603",
     "third_party/ns3/LICENSE": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6",
+    "tools/action_space_sweep.py": "a04eb9115d676db7a61f9bd2f29d95ed320d3f2195edd35c5934ff4b57724570",
     "tools/download_models.py": "a797307623a204c82583cd59aa9c2a80909e9323e18e9568d4fa463902bf524d",
     "tools/export_results.py": "b766823520934813329556239b55b6172975ad55c2a6afc1e8e1acec3d8df288",
     "tools/native_regression.py": "fc17e18b27ba7441089184c37b6728b39df91d82fdba565100b100c36f9172dc",
     "tools/prepare.py": "3c020a0c8940b3a4ed894eacaa1f42af0155440df6bb406a661d14fead2e305c",
     "tools/run_case.py": "6cb851a730295d8d92bfec4a7eb0c989319ad82b69a351f3e0defefdfa357a66",
     "tools/run_matrix.py": "385786fea7fe0dc8cd582d3efd54eea1915294447cf77d625b2d98ce88b275d3",
+    "tools/schema_diagnostic.py": "367ab3cb266a777754d304fbc2e96591fe3654856d71586de49c0b57ec7084b0",
     "tools/setup_llama.py": "73eb7257fe8cf36f5db4ff37ba1c3d7d656d8e396e170075b22977d4595434c3",
     "tools/setup_native.py": "701470dbee76889343f76cee7560ff3014d527a0d70b40c1c71be7d823d4f2a5",
     "tools/smoke_native.py": "82c0cce9d0ba120f4a1387ff90e28d4cb10329a733c0982c85f14b5ffd0fd7f0",
     "tools/start_servers.py": "6159178fa9dea94b11b10925245322f0eacbf33e631434cdcd470b182288ba95",
-    "tools/stop_servers.py": "1bdf944d8fabed54042e4801d356e614f25d889a9e441734896538ae1589cb5d",
-    "tools/tests/test_export_results.py": "82723d186bcce91f0977dcd5160f03698147d81ba73c312e266f6ae1f4939bee"
+    "tools/stop_servers.py": "6e7a66d75a783d868736de43aa2daeae0caaf16ec9f1b5c25922d644f86c8b54",
+    "tools/tests/test_export_results.py": "82723d186bcce91f0977dcd5160f03698147d81ba73c312e266f6ae1f4939bee",
+    "tools/tests/test_schema_diagnostic.py": "391c9cc625ebb250dc907daa0c7724d1acb5326352535c40e6516842b7c47077",
+    "tools/tests/test_stop_servers.py": "b32ce766bfbc2568106fba8c16692201855270f66bfc300620e39732364aca18"
   },
   "dependencies": {
     "ns3": {
@@ -175,11 +179,15 @@
   "scientific_core_matches_execution_source": 47,
   "manifest_self_hash": "This manifest is excluded from its own hash map; Git commit identifies the full tree.",
   "validation": {
-    "python_checks_passed": 146,
+    "python_checks_passed": 157,
     "native_api_checks_passed": 11,
     "real_native_smoke_passed": true,
     "smoke_llm_calls": 0,
     "native_and_pinned_llama_built_from_source": true,
-    "new_full_campaign_executed_for_packaging": false
+    "new_full_campaign_executed_for_packaging": false,
+    "action_space_pairs_replayed": 2013,
+    "action_space_summaries_match_original": true,
+    "schema_diagnostic_gpu_calls_for_packaging": 0,
+    "server_cleanup_ownership_checked_read_only_against_original_server": true
   }
 }
