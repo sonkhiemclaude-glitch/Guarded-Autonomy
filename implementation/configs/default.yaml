@@ -1,0 +1,14 @@
+# Default: a reduced component check (abstract model) that runs in about a minute.
+# Not the paper's grid; see component_check_paper.yaml for that.
+name: component_check_reduced
+kind: component_check
+seed: 0
+output_dir: outputs
+synthetic: true                # reduced grid: label outputs as smoke test
+component_check:
+  suites: [cc1, cc2, cc3]
+  n_seeds: 3
+  steps: 100
+  cc1: {ns: [20, 50], vmaxs: [20.0], proposers: [rand, greedy, adv, stable]}
+  cc2: {n: 50, attacks: [inflate, shortcut], fracs: [0.1]}
+  cc3: {n: 50, taus: [0.3, 0.5, 0.7], watchdogs: [[0.05, 0.0], [0.15, 0.3]]}

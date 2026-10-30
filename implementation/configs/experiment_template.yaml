@@ -1,0 +1,55 @@
+# System-level evaluation E1-E5 (paper Sec. 7). Template for the Mac Studio.
+# `ns3-plan` only writes run directories. Nothing is downloaded or executed automatically.
+# Fill every field marked TODO before running; record exact versions in the run metadata.
+name: system_eval_reduced
+kind: ns3_system
+seed: 0
+output_dir: outputs
+synthetic: false
+ns3_system:
+  ns3:
+    root: /path/to/ns-3-dev            # TODO: local ns-3 tree on the Mac Studio (pinned release)
+    scenario: guarded-autonomy-manet   # TODO NS3-1: scratch/guarded-autonomy-manet.cc (not in this repo)
+    bridge_port: 5577
+  bridge:
+    host: 127.0.0.1
+    port: 5577
+    shielded: true
+    sanitise_inputs: false
+    shield: {}                          # ShieldConfig overrides, e.g. {use_trust: false} for ablation -I3
+    agent:                              # omit for configurations without an agent
+      base_url: http://127.0.0.1:8080   # TODO: llama-server or vLLM endpoint on the Mac Studio
+      model: TODO-model-id              # e.g. exact GGUF file / HF id and quantisation
+      temperature: 0.0
+      max_tokens: 128
+      constraint: json_schema           # verify field support for the pinned server (AG-2)
+  experiments:
+    # Reduced grid suggested for the first submission (paper experiment plan, section 9)
+    E1_E2:
+      n_seeds: 10
+      fixed: {n: 50, vmax: 20, mobility: steady_state_rwp, flows: 10, sim_time_s: 300, warmup_s: 50}
+      axes:
+        configuration: [unshielded, shielded, shielded_no_I3, shielded_no_I4c, shielded_no_tier2, sanitised_unshielded]
+        adv_frac: [0.0, 0.2]
+        attack: [T1, T2, T3, T4]
+        model: [llama-3.2-1b, llama-3.1-8b]
+    E3:
+      n_seeds: 10
+      fixed: {n: 50, vmax: 20, mobility: steady_state_rwp, flows: 10, sim_time_s: 300, warmup_s: 50, induced_failures: true}
+      axes:
+        configuration: [aodv, trust_aware_aodv, shielded]
+        adv_frac: [0.0, 0.2]
+        model: [llama-3.1-8b]
+    E4:
+      n_seeds: 5
+      fixed: {n: 50, vmax: 20, mobility: steady_state_rwp, flows: 10, sim_time_s: 300, warmup_s: 50, timing: measured}
+      axes:
+        configuration: [shielded]
+        model: [llama-3.2-1b, llama-3.2-3b, llama-3.1-8b, qwen2.5-1.5b, qwen2.5-3b, qwen2.5-7b]
+    E5:
+      n_seeds: 10
+      fixed: {n: 50, vmax: 20, mobility: steady_state_rwp, flows: 10, sim_time_s: 300, warmup_s: 50, attack: T4, adv_frac: 0.2}
+      axes:
+        configuration: [unshielded, shielded]
+        injection_family: [goal_hijack, impersonation, json_shaped, obfuscated]
+        model: [llama-3.1-8b]

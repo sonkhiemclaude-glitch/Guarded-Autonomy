@@ -1,0 +1,11 @@
+{
+  "ns3": {
+    "version": "3.46.1",
+    "url": "https://www.nsnam.org/releases/ns-3.46.1.tar.bz2",
+    "sha256": "fd3255df035a52008638fb5d81f77685260fd607be107eaf8e5116bcf1fd2c03"
+  },
+  "llama_cpp": {
+    "repository": "https://github.com/ggml-org/llama.cpp.git",
+    "commit": "19ab5a5e65736a35437e6b1c0ccd6562fed01b1b"
+  }
+}

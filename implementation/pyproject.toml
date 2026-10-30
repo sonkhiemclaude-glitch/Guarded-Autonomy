@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guarded-autonomy"
+version = "0.1.0"
+description = "Runtime guard and native AODV/ns-3 research artifact"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pyyaml>=6.0", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "mypy>=1.10", "types-PyYAML"]
+
+[project.scripts]
+guarded-autonomy = "guarded_autonomy.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+extend-exclude = ["paper_evidence_v1"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["UP007", "UP045", "UP006", "UP035", "B905", "UP042"]  # UP042: keep (str, Enum) semantics
+
+[tool.ruff.lint.per-file-ignores]
+"src/guarded_autonomy/agents/grammar.py" = ["E501"]  # GBNF rules live in one string literal
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src"]
+strict_optional = true
+warn_unused_ignores = false
+ignore_missing_imports = true

@@ -1,0 +1,262 @@
+{
+ "cc1_runs": 540,
+ "cc1_shielded_loop_steps_total": 0,
+ "cc1_shielded_loop_creating_proposals": 67360,
+ "cc1_shielded_loop_creating_committed": 0,
+ "cc1_unshielded_loop_creating_committed": 60918,
+ "cc1_shielded_proposals": 717343,
+ "cc1_conservativeness_by_proposer": {
+  "rand": 0.9149500838810813,
+  "greedy": 0.7808950458166337,
+  "adv": 0.9043459978449597
+ },
+ "cc1_conservativeness_per_setting_range": [
+  0.754720692368214,
+  0.9537591483699268
+ ],
+ "cc1_conservativeness_routeless_per_setting_range": [
+  0.3863045738045738,
+  0.6101550680786687
+ ],
+ "cc1_shielded_runs": 240,
+ "cc1_unshielded_proposals": 419651,
+ "cc1_shielded_vs_base_max_abs_gap": 0.003190476190476299,
+ "cc1_latency_median_us_range": [
+  5.547000000660773,
+  11.32900001721282
+ ],
+ "cc1_latency_p99_us_max": 41.8760000684415,
+ "cc1_stable_accepted": 45066,
+ "cc1_stable_diff_base": 19911,
+ "cc1_stable_vs_base_availability": {
+  "v5_n20": {
+   "mean_diff": 0.005035087719298248,
+   "ci95": 0.0039232101241272865,
+   "wilcoxon_p": 0.01953125
+  },
+  "v5_n50": {
+   "mean_diff": 0.004367346938775485,
+   "ci95": 0.0026490785017644182,
+   "wilcoxon_p": 0.005859375
+  },
+  "v5_n100": {
+   "mean_diff": 0.005468013468013488,
+   "ci95": 0.002655292946840476,
+   "wilcoxon_p": 0.00390625
+  },
+  "v20_n20": {
+   "mean_diff": 0.006807017543859639,
+   "ci95": 0.002305482246525168,
+   "wilcoxon_p": 0.001953125
+  },
+  "v20_n50": {
+   "mean_diff": 0.008625850340136054,
+   "ci95": 0.0030804391436886646,
+   "wilcoxon_p": 0.001953125
+  },
+  "v20_n100": {
+   "mean_diff": 0.0139427609427609,
+   "ci95": 0.002869820048716997,
+   "wilcoxon_p": 0.001953125
+  }
+ },
+ "cc1_base_vs_unshielded_greedy_availability": {
+  "v5_n20": [
+   0.9007719298245613,
+   0.9915964912280701
+  ],
+  "v5_n50": [
+   0.8619183673469388,
+   0.9878367346938776
+  ],
+  "v5_n100": [
+   0.8182929292929293,
+   0.9773872053872054
+  ],
+  "v20_n20": [
+   0.8291578947368421,
+   0.9934035087719298
+  ],
+  "v20_n50": [
+   0.7287210884353742,
+   0.9803741496598639
+  ],
+  "v20_n100": [
+   0.6285151515151516,
+   0.9653232323232324
+  ]
+ },
+ "cc2": {
+  "inflate_0.1_base_loop": {
+   "adv": 0.9295681818181818,
+   "valid": 0.025545454545454545,
+   "adv_direct": 0.7146060606060606,
+   "loop": 0.0
+  },
+  "inflate_0.1_unshielded_loop": {
+   "adv": 0.9333939393939394,
+   "valid": 0.05975,
+   "adv_direct": 0.6952878787878788,
+   "loop": 0.059
+  },
+  "inflate_0.1_shielded_loop": {
+   "adv": 0.9185151515151515,
+   "valid": 0.03666666666666667,
+   "adv_direct": 0.705469696969697,
+   "loop": 0.0
+  },
+  "inflate_0.1_shielded_loop+trust": {
+   "adv": 0.7745530303030304,
+   "valid": 0.14656060606060606,
+   "adv_direct": 0.17420454545454545,
+   "loop": 0.0
+  },
+  "inflate_0.2_base_loop": {
+   "adv": 0.965017094017094,
+   "valid": 0.005008547008547008,
+   "adv_direct": 0.8806495726495727,
+   "loop": 0.0
+  },
+  "inflate_0.2_unshielded_loop": {
+   "adv": 0.9613247863247864,
+   "valid": 0.03393162393162393,
+   "adv_direct": 0.8625982905982906,
+   "loop": 0.04066666666666667
+  },
+  "inflate_0.2_shielded_loop": {
+   "adv": 0.9527521367521368,
+   "valid": 0.01741880341880342,
+   "adv_direct": 0.8690683760683761,
+   "loop": 0.0
+  },
+  "inflate_0.2_shielded_loop+trust": {
+   "adv": 0.8565811965811966,
+   "valid": 0.08172649572649572,
+   "adv_direct": 0.29291452991452993,
+   "loop": 0.0
+  },
+  "shortcut_0.1_base_loop": {
+   "adv": 0.5943409090909091,
+   "valid": 0.2941969696969697,
+   "adv_direct": 0.5016818181818182,
+   "loop": 0.0
+  },
+  "shortcut_0.1_unshielded_loop": {
+   "adv": 0.6359166666666667,
+   "valid": 0.3586212121212121,
+   "adv_direct": 0.5066363636363637,
+   "loop": 0.044333333333333336
+  },
+  "shortcut_0.1_shielded_loop": {
+   "adv": 0.5941742424242424,
+   "valid": 0.2939848484848485,
+   "adv_direct": 0.5014848484848485,
+   "loop": 0.0
+  },
+  "shortcut_0.1_shielded_loop+trust": {
+   "adv": 0.31531060606060607,
+   "valid": 0.5128636363636364,
+   "adv_direct": 0.12241666666666666,
+   "loop": 0.0
+  },
+  "shortcut_0.2_base_loop": {
+   "adv": 0.6663076923076923,
+   "valid": 0.2421111111111111,
+   "adv_direct": 0.6226239316239316,
+   "loop": 0.0
+  },
+  "shortcut_0.2_unshielded_loop": {
+   "adv": 0.7139230769230769,
+   "valid": 0.2817264957264957,
+   "adv_direct": 0.6479059829059829,
+   "loop": 0.03766666666666667
+  },
+  "shortcut_0.2_shielded_loop": {
+   "adv": 0.6660854700854701,
+   "valid": 0.24222222222222223,
+   "adv_direct": 0.6221623931623932,
+   "loop": 0.0
+  },
+  "shortcut_0.2_shielded_loop+trust": {
+   "adv": 0.4083846153846154,
+   "valid": 0.4413162393162393,
+   "adv_direct": 0.2037948717948718,
+   "loop": 0.0
+  }
+ },
+ "cc3": {
+  "wd0.05_t0.3_unshielded": {
+   "hp": 5254,
+   "hc": 5254,
+   "ap": 4009,
+   "ac": 4009,
+   "adv": 0.523530303030303,
+   "valid": 0.4026439393939394
+  },
+  "wd0.05_t0.3_shielded": {
+   "hp": 4665,
+   "hc": 0,
+   "ap": 3040,
+   "ac": 26,
+   "adv": 0.31688636363636363,
+   "valid": 0.5119318181818182
+  },
+  "wd0.05_t0.5_shielded": {
+   "hp": 4607,
+   "hc": 0,
+   "ap": 3031,
+   "ac": 672,
+   "adv": 0.31781060606060607,
+   "valid": 0.5109090909090909
+  },
+  "wd0.05_t0.7_shielded": {
+   "hp": 4589,
+   "hc": 3,
+   "ap": 3044,
+   "ac": 1080,
+   "adv": 0.31503030303030305,
+   "valid": 0.512719696969697
+  },
+  "wd0.15_t0.3_unshielded": {
+   "hp": 5476,
+   "hc": 5476,
+   "ap": 4047,
+   "ac": 4047,
+   "adv": 0.5208787878787878,
+   "valid": 0.4041893939393939
+  },
+  "wd0.15_t0.3_shielded": {
+   "hp": 4604,
+   "hc": 3,
+   "ap": 3001,
+   "ac": 28,
+   "adv": 0.3310075757575758,
+   "valid": 0.48245454545454547
+  },
+  "wd0.15_t0.5_shielded": {
+   "hp": 4630,
+   "hc": 180,
+   "ap": 3018,
+   "ac": 668,
+   "adv": 0.3312121212121212,
+   "valid": 0.4800833333333333
+  },
+  "wd0.15_t0.7_shielded": {
+   "hp": 4895,
+   "hc": 1271,
+   "ap": 3019,
+   "ac": 899,
+   "adv": 0.32736363636363636,
+   "valid": 0.4756969696969697
+  }
+ },
+ "cc3_violation_counts_wd005": {
+  "I1:not-isolated": 6512,
+  "I2:feasibility": 40567,
+  "I3:trust-next-hop": 24127,
+  "I4:already-isolated": 2096,
+  "I4a:trust-threshold": 17420,
+  "I4b:evidence-precedence": 5950,
+  "I4c:rate-limit": 721
+ }
+}

@@ -1,0 +1,15 @@
+# Exactly the component-check grid of the paper (Sec. 6, Table A.8): 540 + 160 + 80 runs.
+# Abstract model with scripted proposers: NOT ns-3 and NOT an LLM evaluation.
+# Intended for the Mac Studio (about 25 CPU-minutes single-threaded; use --workers).
+name: component_check_paper
+kind: component_check
+seed: 0
+output_dir: outputs
+synthetic: false               # these are the paper's component-check runs (abstract model)
+component_check:
+  suites: [cc1, cc2, cc3]
+  n_seeds: 10
+  steps: 300
+  cc1: {ns: [20, 50, 100], vmaxs: [5.0, 20.0], proposers: [rand, greedy, adv, stable]}
+  cc2: {n: 50, attacks: [inflate, shortcut], fracs: [0.1, 0.2]}
+  cc3: {n: 50, taus: [0.3, 0.5, 0.7], watchdogs: [[0.05, 0.0], [0.15, 0.3]]}
