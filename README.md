@@ -4,7 +4,7 @@ Source code and reproducible inputs for a runtime guard on routing and self-heal
 
 The native implementation uses **AODV in ns-3.46.1**. Local contracts do not guarantee that every permitted action is globally harmless or that an LLM improves packet delivery. OLSR has a local predicate helper, but no native OLSR evaluation is supplied.
 
-This initial source release includes code, tests, the native source overlay, fixed benchmark states, model checksums and an experimental plan. Complete evaluation outputs will be added separately. A successful smoke test is **not a primary experimental result**. Model weights, generated runs, server binaries, private authoring material and credentials are not committed.
+This artifact includes code, tests, the native source overlay, fixed benchmark states, model checksums and the experimental plan. The original predefined campaign is now complete: **1,190/1,190 accepted primary runs**, including **60/60 R4 runs**. Verified numerical summaries are in [`results/research-v31-20261031`](results/research-v31-20261031/) and the [dated results release](https://github.com/sonkhiemclaude-glitch/Guarded-Autonomy/releases/tag/results-2026-10-31). A successful smoke test is **not a primary experimental result**. Model weights, generated runs, server binaries, private authoring material and credentials are not committed.
 
 ## 1. Start here: install and test without a model
 
@@ -121,14 +121,14 @@ python tools/schema_diagnostic.py --all
 
 This uses five explicit JSON-copy prompts per model and the server's native JSON-schema constraint. It measures transport/action-space capability, with one attempt per prompt; it is not an autonomous network decision or attack benchmark. It refuses to submit requests while the full replication holds its lock. Each invocation records a new timestamped directory under `runs/artifact_schema_diagnostic/`, including failed calls. Raw model responses remain git-ignored.
 
-## 6. Add verified results later
+## 6. Verified results and future updates
 
 Numerical outputs can be added without publishing raw responses or authoring material:
 
 ```bash
 python tools/export_results.py \
   --analysis runs/research_v31_primary/analysis \
-  --output results/research-v31
+  --output results/research-v31-replication
 ```
 
 The exporter requires complete 1,190-case coverage and matching analysis hashes. It copies an explicit set of numerical summaries, records their provenance, and leaves out PDFs, narrative reports and raw model responses. The destination must be empty; an existing release is never overwritten. Review the diff, then commit the versioned `results/` directory. For a different experimental design, use a new results version with its own coverage and provenance; retain earlier releases.
@@ -142,7 +142,7 @@ The exporter requires complete 1,190-case coverage and matching analysis hashes.
 - `artifact_inputs/`: portable fixed states, payloads, intervention plan and dependency/model fingerprints.
 - `tools/`: clean setup, no-model smoke, optional inference/replication, supplemental diagnostics, and numerical-result export.
 - `scripts/`: measurement, validation and analysis implementation.
-- `results/`: versioned numerical releases, added after verification.
+- `results/`: verified, versioned numerical releases. The original completed campaign is `research-v31-20261031`; keep new replications in a different directory.
 
 Working directories (`vendor/`, `models/`, `environment/`, `runs/`, `logs/`, generated `research_v3/` and outputs) are git-ignored. Keep credentials outside the repository.
 

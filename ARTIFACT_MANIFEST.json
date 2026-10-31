@@ -3,7 +3,7 @@
   "scope": "Source, fixed reproducibility inputs and numerical regression fixtures. Primary campaign results are released separately.",
   "sha256_files": {
     ".gitignore": "af65094774bc676ab012475d58208d0c1df40c770612c4b053bd520cc7014774",
-    "README.md": "38febca18bd35c13e6e05012d7d95bf00bf63a048eb754d9264fba2173f78d26",
+    "README.md": "807151e470faa0725e971ec0d23abc66a4fc24ed2644f78fe2438361d2748d75",
     "artifact_inputs/dependencies.json": "169847fbb82b2945619dbc9ef9de05d67ec8985279397e8212618b509a09d971",
     "artifact_inputs/llama_cpp_commit.txt": "efd0bf1d1a2e71a463d3e4388991621cf7ae6c5ee309b399d50498be1cc4a9ba",
     "artifact_inputs/models_manifest.template.json": "07488cb160518c78853b994cec60374b7dab6c1896b3cb2a1cdf3fc42d8c123c",
@@ -158,7 +158,15 @@
     "tools/stop_servers.py": "6a2d0f5679cfa5426a500cb8a4c7e93760a2fb53a6b8c3a593c5dfdccfdfae28",
     "tools/tests/test_export_results.py": "82723d186bcce91f0977dcd5160f03698147d81ba73c312e266f6ae1f4939bee",
     "tools/tests/test_schema_diagnostic.py": "391c9cc625ebb250dc907daa0c7724d1acb5326352535c40e6516842b7c47077",
-    "tools/tests/test_stop_servers.py": "46cb7b470858728aa19058517127fb173219193b5f4fd1522c6260bb1534bd28"
+    "tools/tests/test_stop_servers.py": "46cb7b470858728aa19058517127fb173219193b5f4fd1522c6260bb1534bd28",
+    "results/research-v31-20261031/primary_paired_tests.csv": "d76ba932a864dd021438c962ecb816c951d60ccee0bc44562e73d3ffda199fdd",
+    "results/research-v31-20261031/condition_summary.csv": "f3fb348c78c1c0c3d64d3567be82ba9b91860776e20dcea1166c910f4b15124d",
+    "results/research-v31-20261031/heldout_attack_summary.csv": "669b83bea4610c5a3317c28eebdeae4213330b77a9b67b5a35ed543fcc11a9c5",
+    "results/research-v31-20261031/secondary_paired_tests.csv": "5fd80de39bf82ef1230f72d4ae77dc8ba7e3e1664dc9201157e8018450d4f03e",
+    "results/research-v31-20261031/release_manifest.json": "46e29444b9932d6c4b3b185afa830f1b0ea2c77c68f08441ee6a33af8b150665",
+    "results/research-v31-20261031/coverage.json": "21f510cce10e917ba461c0ddfa9935b180c81d2b7ba39abdaaa1902154c26117",
+    "results/research-v31-20261031/README.txt": "7581bb8d0fa1c4d35c06044b77dca0638d63587d779357406af0814c4c130fa4",
+    "results/research-v31-20261031/fixed_observation_cost_summary.csv": "4a9d671b473a92cbf3daf91c9b022dc881aca2172c5e8c38d2c6a99f2d6a531f"
   },
   "dependencies": {
     "ns3": {
@@ -189,5 +197,14 @@
     "action_space_summaries_match_original": true,
     "schema_diagnostic_gpu_calls_for_packaging": 0,
     "server_cleanup_ownership_checked_read_only_against_original_server": true
+  },
+  "numerical_release": {
+    "version": "research-v31-20261031",
+    "tag": "results-2026-10-31",
+    "primary_accepted": 1190,
+    "r4_accepted": 60,
+    "scientific_source_unchanged_from": "7a0c6ed169e894537592e65e7a9a4145b884d361",
+    "exporter": "tools/export_results.py",
+    "scope": "Verified numerical summaries and documentation only"
   }
 }

@@ -1,0 +1,48 @@
+{
+  "scope": "Verified numerical summaries only. Absolute project-root metadata is replaced by ${PROJECT_ROOT}; numerical fields are unchanged. No raw model responses, narrative reports or manuscript files.",
+  "source_analysis_manifest_sha256": "8b217264f6ff5b676a2b1d8459562441bc215077f70b422baa224d4b9eaab97a",
+  "coverage": {
+    "accepted": 1190,
+    "analysis_code_sha256": "346e8f0449c5df686e79c6795509556b3561e9178113291e6f1934e71892889e",
+    "complete": true,
+    "conditions": 125,
+    "expected": 1190,
+    "fixed_cost_measured_queries": 120,
+    "fixed_cost_warmup_queries": 12,
+    "heldout_attack_queries": 1640,
+    "primary_tests": 4,
+    "source_manifest_sha256": "25bddc5014bbdaa642376b7412337f53102ba2624c20c670def194e90000dee9"
+  },
+  "files": {
+    "condition_summary.csv": {
+      "source_sha256": "da3119c1049213c1024b8161fda220d3679ea6ace773c477f427f2beff7e6471",
+      "released_sha256": "f3fb348c78c1c0c3d64d3567be82ba9b91860776e20dcea1166c910f4b15124d",
+      "metadata_root_prefixes_replaced": 1
+    },
+    "coverage.json": {
+      "source_sha256": "21f510cce10e917ba461c0ddfa9935b180c81d2b7ba39abdaaa1902154c26117",
+      "released_sha256": "21f510cce10e917ba461c0ddfa9935b180c81d2b7ba39abdaaa1902154c26117",
+      "metadata_root_prefixes_replaced": 0
+    },
+    "fixed_observation_cost_summary.csv": {
+      "source_sha256": "2bd566ea3a5873f818d6e14dc49d6dccf764773e2636214c7309bcc1c62f4c10",
+      "released_sha256": "4a9d671b473a92cbf3daf91c9b022dc881aca2172c5e8c38d2c6a99f2d6a531f",
+      "metadata_root_prefixes_replaced": 0
+    },
+    "heldout_attack_summary.csv": {
+      "source_sha256": "b7e13ea8f1eb84c27a53b8f17d85eae0e99eb7ae84d97084ed38baaef612bd9a",
+      "released_sha256": "669b83bea4610c5a3317c28eebdeae4213330b77a9b67b5a35ed543fcc11a9c5",
+      "metadata_root_prefixes_replaced": 0
+    },
+    "primary_paired_tests.csv": {
+      "source_sha256": "3cfe3049eae3abdcbf2ea2f5a5fe39a648e378ae6466d9e0ddd54e84ee33fe96",
+      "released_sha256": "d76ba932a864dd021438c962ecb816c951d60ccee0bc44562e73d3ffda199fdd",
+      "metadata_root_prefixes_replaced": 0
+    },
+    "secondary_paired_tests.csv": {
+      "source_sha256": "33c2961a403b1e69108fa42264d0ec31446cdfb67c8cc09e374fb4951689c9b2",
+      "released_sha256": "5fd80de39bf82ef1230f72d4ae77dc8ba7e3e1664dc9201157e8018450d4f03e",
+      "metadata_root_prefixes_replaced": 1
+    }
+  }
+}

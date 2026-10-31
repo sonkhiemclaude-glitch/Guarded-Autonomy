@@ -1,0 +1,12 @@
+{
+  "accepted": 1190,
+  "analysis_code_sha256": "346e8f0449c5df686e79c6795509556b3561e9178113291e6f1934e71892889e",
+  "complete": true,
+  "conditions": 125,
+  "expected": 1190,
+  "fixed_cost_measured_queries": 120,
+  "fixed_cost_warmup_queries": 12,
+  "heldout_attack_queries": 1640,
+  "primary_tests": 4,
+  "source_manifest_sha256": "25bddc5014bbdaa642376b7412337f53102ba2624c20c670def194e90000dee9"
+}

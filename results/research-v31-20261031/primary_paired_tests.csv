@@ -1,0 +1,5 @@
+experiment,scenario,model,comparison,metric,n_expected,n_pairs,missing_seeds,status,mean_delta,delta_ci95,p_raw,w_plus,n_nonzero,p_holm_primary4
+R1_utility,clean,llama-3.2-1b,shielded LLM minus shielded heuristic,pdr,10,10,[],tested,-0.07583333333333335,0.024021595692455634,0.001953125,0,10,0.0078125
+R1_utility,link_cut,llama-3.2-1b,shielded LLM minus shielded heuristic,recovery_rmst_s,10,10,[],tested,10.302410711949994,19.880612483300432,0.76953125,31.0,10,0.76953125
+R1_utility,clean,llama-3.1-8b,shielded LLM minus shielded heuristic,pdr,10,10,[],tested,-0.06776666666666668,0.024699705063388176,0.001953125,0,10,0.0078125
+R1_utility,link_cut,llama-3.1-8b,shielded LLM minus shielded heuristic,recovery_rmst_s,10,10,[],tested,22.039066701849997,44.37302003830632,0.375,37.0,10,0.75
